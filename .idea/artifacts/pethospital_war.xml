@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pethospital:war">
+    <output-path>$PROJECT_DIR$/pethospitaldemo4-3/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>pethospital</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="pethospital.war">
+      <element id="artifact" artifact-name="pethospital:war exploded" />
+    </root>
+  </artifact>
+</component>

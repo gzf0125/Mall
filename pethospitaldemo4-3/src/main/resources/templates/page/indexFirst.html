@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="b">
+    <div id="all">
+        <div id="content">
+          
+            <section class="banner">
+
+            </section>
+            <!--
+            *** ADVANTAGES HOMEPAGE ***
+            _________________________________________________________
+            -->
+<!--            特点-->
+            <div id="features">
+            <section class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="feature-block d-lg-flex">
+                                <div class="feature-item mb-5 mb-lg-0">
+                                    <div class="feature-icon mb-4">
+                                        <i class="icofont-surgeon-alt"></i>
+                                    </div>
+                                    <span>24小时服务</span>
+                                    <h4 class="mb-3">网络预约</h4>
+                                    <p class="mb-4">请联系我们在任何紧急情况，我们在这为您保驾护航！</p>
+                                    <a th:href="@{/reservation/doctorCanReserve}" class="btn btn-main btn-round-full">预约</a>
+                                </div>
+
+                                <div class="feature-item mb-5 mb-lg-0">
+                                    <div class="feature-icon mb-4">
+                                        <i class="icofont-ui-clock"></i>
+                                    </div>
+                                    <h4 class="mb-3">工作时间</h4>
+                                    <ul class="w-hours list-unstyled">
+                                        <li class="d-flex justify-content-between">周三 - 周六 : <span>8:00 - 17:00</span></li>
+                                        <li class="d-flex justify-content-between">周四 - 周五 : <span>9:00 - 17:00</span></li>
+                                        <li class="d-flex justify-content-between">周六 - 周日 : <span>10:00 - 17:00</span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="feature-item mb-5 mb-lg-0">
+                                    <div class="feature-icon mb-4">
+                                        <i class="icofont-support"></i>
+                                    </div>
+                                    <span>客服电话</span>
+                                    <h4 class="mb-3">1-800-700-6200</h4>
+                                    <p>请联系我们在任何紧急情况，我们在这为您保驾护航！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+<!--           //医疗服务-->
+            <div >
+            <section class="section service gray-bg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7 text-center">
+                            <div class="section-title">
+                                <h2>医疗服务</h2>
+                                <div class="divider mx-auto my-4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-laboratory text-lg"></i>
+                                    <h4 class="mt-3 mb-3">内分泌科</h4>
+                                </div>
+
+                                <div class="content">
+                                    <p class="mb-4">内分泌科室专门内分泌疾病的专门科室，主要治疗糖尿病、肥胖症等疾病的临床诊治</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-heart-beat-alt text-lg"></i>
+                                    <h4 class="mt-3 mb-3">心脏科</h4>
+                                </div>
+                                <div class="content">
+                                    <p class="mb-4">
+                                        心脏血管系统是维持生命活动的重要器官。我院心脏病专科配备心脏专业听诊器、血压仪、数字X线诊断系统、大型彩超诊断系统等高端设备，还拥有专业的心脏病专科医疗团队支持
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-tooth text-lg"></i>
+                                    <h4 class="mt-3 mb-3">牙科</h4>
+                                </div>
+                                <div class="content">
+                                    <p class="mb-4">如果长期不为宠物清洁牙齿，口腔中的细菌、食物残渣等，便会积累形成牙菌斑，进而产生牙垢，并逐步演变成坚硬的牙结石。牙结石不仅会压迫牙龈，导致牙齿萎缩等一系列口腔问题；更有可能导致宠物患肾病心脏疾病等大病。我院拥有专业的牙科全套，利用超声波帮助宠物既可除污去垢，还可以通过内外按摩对牙齿起到保健的作用</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-stethoscope text-lg"></i>
+                                    <h4 class="mt-3 mb-3">中兽医科</h4>
+                                </div>
+
+                                <div class="content">
+                                    <p class="mb-4">宠物某些疾病可以通过针灸、按摩、水疗等中医治疗方法来预防治疗。现在
+                                        临床上比较常用的就是中医针灸，治疗瘫痪、运动障碍这一方面疾病。此外，像动物传染病、慢性疾病、脾胃功能、消化功能障碍等疾病也能通过中药、针灸、按摩来进行治疗，从而改善宠物的生活状态，提高它们的生活质量</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-cat-face text-lg"></i>
+                                    <h4 class="mt-3 mb-3">猫专科</h4>
+                                </div>
+                                <div class="content">
+                                    <p class="mb-4">平安宠物医院是国内先进的猫专科服务连锁医院，按照国际标准建立猫诊所，以猫为本，致力于减少猫咪到诊所而导致的应激，也让猫主人摆放宠物医生变得更容易
+                                        更舒适。猫专业诊室和候诊区,"无犬环境"，隔绝噪音打扰，更温和就诊体验。猫专业住院部，单独笼位，复式设计，实现一室一厅一卫，
+                                        更宽敞舒适的活动空间。猫寄养乐园，分豪华玻璃笼位和散养笼位，与猫乐园无缝连接，活动时间单独出来玩耍，满足喵星人上下跳跃的需求。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-item mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-bone text-lg"></i>
+                                    <h4 class="mt-3 mb-3">骨科</h4>
+                                </div>
+                                <div class="content">
+                                    <p class="mb-4">伴随着宠物走入人们的身边，宠物已经成为家庭的一员，车祸、咬伤、高空坠落造成的骨折病例在临床上也逐渐增多，骨折发生后，宠物主人愿意让宠物接受好的治疗。平安拥有从事小动物骨科手术多年的骨科宠物专家队伍，掌握高超的诊疗技术，引进先进的仪器设备，所有的患病动物都会在恒温手术台，无菌手术室被细心检查，并进行术前的血液生化和血液分析检查，及时发现宠物的各种功能变化，对手术麻醉提供科学的依据，麻醉用药均为进口麻药或呼吸麻醉使用，根据爱宠的实际情况来选用。安安在骨外科手术中有着丰富的经验和成功案例，为您的爱宠提供完善的手术服务和有力保证。	</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+
+        </div>
+        <!--            数字分析-->
+
+    </div>
+    <div id="hot">
+        <section class="cta-section ">
+            <div class="container">
+                <div class="section-title">
+                    <h1 align="center">康复案例</h1>
+                    <div class="divider mx-auto my-4"></div>
+                </div>
+                <div class="cta position-relative">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-doctor"></i>
+                                <span class="h3 counter" >548</span>k
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-flag"></i>
+                                <span class="h3 counter" >7000</span>+
+                                <p>手术</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-badge"></i>
+                                <span class="h3 counter" >60</span>+
+                                <p>专业兽医</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-stat">
+                                <i class="icofont-globe"></i>
+                                <span class="h3 counter" >30</span>
+                                <p>全球分院</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="m">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container"><a href="/" class="navbar-brand home"><img th:src="@{/static/images/img/logo.png}"
+                                                                          style="height: 60px"
+                                                                          class="d-none d-md-inline-block"><img
+                th:src="@{/static/images/img/logo.png}" alt="平安宠物医院" style="width: 140px"
+                class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
+            <div class="navbar-buttons">
+                <button type="button" data-toggle="collapse" data-target="#navigation"
+                        class="btn btn-outline-secondary navbar-toggler"><span
+                        class="sr-only">导航条</span><i class="fa fa-align-justify"></i></button>
+                <button type="button" data-toggle="collapse" data-target="#search"
+                        class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i
+                        class="fa fa-search"></i></button>
+                <a href="/shoppingCart" class="btn btn-outline-secondary navbar-toggler"><i
+                        class="fa fa-shopping-cart"></i></a>
+            </div>
+            <div id="navigation" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="/" class="nav-link active">主页</a></li>
+                    <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown"
+                                                                data-delay="200" class="dropdown-toggle nav-link">个人中心<b
+                            class="caret"></b></a>
+                        <ul class="dropdown-menu megamenu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>我的管家</h5>
+                                        <ul class="list-unstyled mb-3" th:if="${session.currentCustomer!=null}">
+                                            <li class="nav-item"><a href="/customer/personalCenter" class="nav-link">个人信息</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/saleList/mySaleList/list/1" class="nav-link">我的订单</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/customer/myPet/list/1" class="nav-link">我的宠物</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/suggestion/mySuggestion/list/1" class="nav-link">我的留言</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="list-unstyled mb-3" th:if="${session.currentCustomer==null}">
+                                            <li class="nav-item"><a href="/login" class="nav-link">个人信息(请先登录)</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/login" class="nav-link">我的订单(请先登录)</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/login" class="nav-link">我的宠物(请先登录)</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/login" class="nav-link">我的收藏(请先登录)</a>
+                                            </li>
+                                            <li class="nav-item"><a href="/login" class="nav-link">我的留言(请先登录)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>预约</h5>
+                                        <ul class="list-unstyled mb-3" th:if="${session.currentCustomer!=null}">
+                                            <li class="nav-item"><a href="/reservation/doctorCanReserve" class="nav-link">预约医生</a></li>
+                                        </ul>
+                                        <ul class="list-unstyled mb-3" th:if="${session.currentCustomer==null}">
+                                            <li class="nav-item"><a href="/login" class="nav-link">预约医生(请先登录)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown"
+                                                                data-delay="200" class="dropdown-toggle nav-link">购物<b
+                            class="caret"></b></a>
+                        <ul class="dropdown-menu megamenu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-3" th:each="goodsType:${application.goodsTypeList}">
+                                        <a th:href="'/goods/list/1?typeId='+${goodsType.id}" style="color: black"><h5
+                                                th:text="${goodsType.getName()}"></h5></a>
+                                        <ul class="list-unstyled mb-3"
+                                            th:each="smallGoodsType:${goodsType.smallGoodsTypeList}">
+                                            <li class="nav-item"><a
+                                                    th:href="'/goods/list/1?typeId='+${smallGoodsType.id}"
+                                                    class="nav-link" th:text="${smallGoodsType.name}"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-buttons d-flex justify-content-end">
+                    <!-- /.nav-collapse-->
+                    <div id="search-not-mobile" class="navbar-collapse collapse"></div>
+                    <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block">
+                        <a href="/goods/list/1?typeId=21" class="btn btn-primary navbar-btn" title="平安宠物医院商城"><i
+                                class="fa fa-shopping-bag"></i>商城</a>
+                        <a href="/shoppingCart" class="btn btn-primary navbar-btn"
+                           th:if="${session.currentCustomer!=null}"><i class="fa fa-shopping-cart"></i><span>购物车<span
+                                class="badge badge-light"
+                                th:text="${session.shoppingCart.getShoppingCartItems().size()}"
+                                th:if="${session.shoppingCart!=null}"></span><span class="badge badge-light"
+                                                                                   th:if="${session.shoppingCart==null}">0</span></span></a>
+                        <a href="/login" class="btn btn-primary navbar-btn"
+                           th:if="${session.currentCustomer==null}"><span>登录</span></a>
+                        <a href="/login.html" class="btn btn-primary navbar-btn"
+                           th:if="${session.currentCustomer==null}"><span>管理员登录</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
